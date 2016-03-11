@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ta想做你的圣诞礼物</title>
+  <link rel="stylesheet" href="css/idangerous.swiper.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no" searchtype="map">
+  <meta name="apple-mobile-web-app-capable" content="yes"/> 
+  <style>
+    /* Demo Syles */
+    html{
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+    .swiper-container {
+      height: 100%;
+      width: 100%;
+    }
+    .swiper-slide{
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      vertical-align:middle;
+    }
+    img{
+      width: 100%;
+    }
+    .page{
+      position: relative;
+    } 
+    .word{
+      position: absolute;
+      top: 0;
+    }
+    .button{
+      position: absolute;
+      bottom: 5%;
+      display: block;
+    }
+    .word2{
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .word1,.word2,.word3{
+      opacity: 0;
+    }
+    .up{
+      font-family: '黑体';
+      color: rgba(0, 0, 0, 0.7);
+      font-weight: 700;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 68px;
+      margin-left: -34px;
+      z-index: 222;
+      -webkit-animation:up 1.5s linear infinite alternate;
+    }
+    .show1{
+      -webkit-animation:show 1.5s linear 1 forwards;
+    }
+     .show2{
+      -webkit-animation:show 1.5s linear 1.5s 1 forwards;
+    }
+    @-webkit-keyframes show{
+      from{
+        opacity: 0;
+      }
+      to{
+        opacity: 1;
+      }
+    }
+    @-webkit-keyframes up{
+      from{
+        -webkit-transform:translateY(0);
+      }
+      to{
+        -webkit-transform:translateY(-10px);
+      }
+    }
+   /* .box{
+      background: url(imgs/snow.png);
+      -webkit-background-size: 100%;
+      background-size: 100%;
+    }*/
+    .no1{
+      background: url(imgs/snow.png),url(imgs/bg01.jpg), #BCC7B7 ;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+    }
+    .no2{
+      background: url(imgs/snow.png), url(imgs/bg03.jpg), #D6D7C4;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+    }
+    .no3{
+      background: url(imgs/snow.png), url(imgs/bg05.jpg), #CCC89B;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+    }
+    .no4{
+      background: url(imgs/snow.png), url(imgs/bg07.jpg), #BFB194;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+    }
+    .no5{
+      background: url(imgs/snow.png), url(imgs/bg09.jpg), #BCC6BB;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+    }
+    .borderImage { 
+      -webkit-tap-highlight-color:rgba(0,0,0,0); 
+    }
+
+    /*媒体查询*/
+    @media screen and (max-height: 480px) {
+     img{
+      width: 90%;
+      margin: auto;
+     }
+     .word2{
+      left: 5%;
+     }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide no1 page">
+        <div class="box">
+          <img src="imgs/bg02.png">
+        </div>
+        <div class="word">
+          <img src="imgs/ele1.png" class="word1">
+          <img src="imgs/ele2.png" class="word2">
+        </div>
+      </div>
+      <div class="swiper-slide no2 page">
+        <div class="box">
+          <img src="imgs/bg04.png">
+        </div>
+        <div class="word">
+          <img src="imgs/ele3.png" class="word3">
+        </div>
+      </div>
+      <div class="swiper-slide no3 page">
+        <div class="box">
+          <img src="imgs/bg06.png">
+        </div>
+        <div class="word">
+          <img src="imgs/ele4.png" class="word3">
+        </div>
+      </div>
+      <div class="swiper-slide no4 page">
+        <div class="box">
+          <img src="imgs/bg08.png">
+        </div>
+        <div class="word">
+          <img src="imgs/ele5.png" class="word3">
+        </div>
+      </div>
+        <div class="swiper-slide no5 page">
+        <div class="box">
+          <img src="imgs/bg10.png">
+        </div>
+        <a href="http://weapp.weizoom.com/termite/workbench/jqm/preview/?module=mall&model=product&action=get&rid=1663&workspace_id=mall&webapp_owner_id=102&workspace_id=407&fmt=" class="button">
+          <img src="imgs/ele6.png">
+        </a>
+      </div>
+    </div>
+  </div>
+<div class="up">向上滑动</div>
+
+  <script src="js/jquery-1.10.1.min.js"></script>
+  <script src="js/idangerous.swiper.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $('.word1').addClass('show1');
+    $('.word2').addClass('show2');
+    var mySwiper = new Swiper('.swiper-container',{
+       mode:"vertical",
+       noSwiping:true,
+       grabCursor: true,
+       onSlideChangeStart:(function(){
+        $('.swiper-slide-active').siblings().find('img').removeClass('show1');
+        $('.swiper-slide-active').siblings().find('img').removeClass('show2');
+        $('.swiper-slide-active').find('.word3').addClass('show1');
+        $('.swiper-slide-active').find('.word1').addClass('show1');
+        $('.swiper-slide-active').find('.word2').addClass('show2');
+        if(mySwiper.activeIndex == 4){
+          $('.up').hide();
+        }else{
+          $('.up').show();
+        }
+       })
+    });
+  });
+  </script>
+</body>
+</html>
